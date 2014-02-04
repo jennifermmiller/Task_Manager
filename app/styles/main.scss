@@ -1,0 +1,289 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+//Colors:
+$reddish: #741731;
+$grayish: #636B70;
+$yellowish: #D2CB97;
+$off-white: #F0EDDA;
+$blueish: #2F5365;
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body * {
+  vertical-align: top;
+}
+
+/* Space out content a bit */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2F5365;
+  font-family: 'Lato', sans-serif; 
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  display: fixed;
+  background-color: $reddish;
+  border-bottom: 1px solid $grayish;
+  width: 100%;
+  text-shadow: 1px 1px $grayish;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 60px;
+    padding-bottom: 5px;
+    color: $off-white;
+    display: inline-block;
+  }  
+}
+
+.made-by{
+  margin:20px 0 0 15px;
+  font-size: 18px;
+  color: $off-white;
+  display: inline-block;
+}
+
+.header ul{
+  margin-top: 15px;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+//Start of my styling
+
+//Start of styling for Create New Task box:
+.full-screen-shadow{
+  background-color: rgba(0, 0, 0, .2);
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  z-index: 3;
+
+  &.active {
+    display: block;
+  }
+}
+
+.make-new-btn{
+  box-shadow: 1px 1px #285e8e;
+}
+
+.new-task-box {
+  position: absolute;
+  top: 50%;   
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -300px;
+  z-index: 10;
+  width: 600px;
+  height: 265px;
+  border-radius: 6px;
+  background-color: $off-white;
+  font-size: 16px;
+  color: $reddish;
+  padding: 0px 0 10px 20px;
+  box-shadow: 1px 1px 4px;
+}
+
+.new-task-header{
+  text-align: center;
+  font-size: 22px;
+  background: $reddish;
+  color: $off-white;
+  border-bottom: 1px solid $grayish;
+  text-shadow: 1px 1px $grayish;
+  border-radius: 6px 6px 0 0;
+  width: 600px;
+  margin-left: -20px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.new-task-description,
+.new-task-more-info,
+.new-task-due-date,
+.new-task-btns{
+  margin-top: 15px;
+}
+
+.new-task-description input{
+  width: 250px;
+  margin-left: 27px;
+}
+
+.new-task-description input,
+.new-task-due-date input{
+  height: 40px;
+}
+
+.new-task-description,
+.new-task-due-date{
+  display: inline-block;
+  line-height: 40px;
+}
+
+.new-task-due-date{
+  float: right;
+  margin-right: 15px;
+}
+
+.new-task-more-info textarea{
+  width: 494px;
+  height: 85px;
+  margin-left: 15px;
+  max-width: 494px;
+  max-height: 85px;
+}
+
+.new-task-btns{
+  margin-right: 15px;
+  float: right;
+}
+
+.create-btn{
+  margin-right: 10px;
+  color: $reddish;
+}
+
+.cancel-btn{
+  width: 136px;
+}
+
+//Start of styling for New Task List
+.task-list-container{
+  background-color: $off-white;
+  width: 675px;
+  margin: 15px;
+  padding: 15px;
+  height: 125px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 2px;
+
+  &.expand{
+    height: 300px;
+  }
+
+  &.complete{
+    background: $grayish;
+  }
+}
+
+.right-side,
+.left-side{
+  width: 320px;
+  display: inline-block;
+}
+
+.task-description{
+  font-size: 28px;
+  height: 35px;
+  line-height: 35px;
+  overflow: hidden;
+  color: $reddish;
+  text-shadow: 1px 1px $grayish;
+}
+
+.task-details{
+  overflow: hidden;
+  height: 65px;
+  font-size: 16px;
+  margin: 5px 0 0 10px;
+
+  &.expand{
+    overflow: scroll;
+    height: 200px;
+  }
+}
+
+.task-due-date{
+  float: right;
+}
+
+.task-due-date p{
+  display: inline;
+  line-height: 25px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.task-btns{
+  float: right;
+  margin-top: 40px;
+
+  &.expand{
+    margin-top: 215px;
+  }
+}
+
+.complete-btn{
+  margin: 0 10px;
+}
+
+.done{
+  position: absolute;
+  display: none;
+
+  &.show-done{
+    display: block;
+    margin: -118px 0 0 230px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
